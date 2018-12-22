@@ -13,7 +13,7 @@ export default class Header extends React.Component {
   render() {
     if (!this.props.source) {
       return (
-        <View style={styles.viewStyle}>
+        <View style={styles.viewStyle2}>
           <Text style={styles.textStyle}>{this.props.name}</Text>
           {this.commonView}
         </View>
@@ -39,6 +39,21 @@ const styles = StyleSheet.create({
   viewStyle: {
     backgroundColor: '#104964',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    height: height / 9,
+    paddingTop: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.9,
+    elevation: 2,
+    position: 'relative',
+    flexDirection: 'row'
+  },
+  viewStyle2: {
+    backgroundColor: '#104964',
+    justifyContent: 'center',
     alignItems: 'center',
     height: height / 9,
     paddingTop: 5,

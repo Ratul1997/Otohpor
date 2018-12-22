@@ -4,6 +4,28 @@ import { StyleSheet, View, TextInput, Image, Dimensions } from 'react-native';
 export default class UserInput extends Component {
   render() {
     
+    if(this.props.sendemail){
+      return (
+        <View style={styles.inputWrapper}>
+          <TextInput
+            style={(!this.props.multiline)?styles.input2:styles.input3}
+            placeholder={this.props.placeholder}
+            secureTextEntry={this.props.secureTextEntry}
+            autoCorrect={this.props.autoCorrect}
+            autoCapitalize={this.props.autoCapitalize}
+            returnKeyType={this.props.returnKeyType}
+            keyboardType={this.props.keyboardType}
+            placeholderTextColor="black"
+            underlineColorAndroid="transparent"
+            autoFocus={this.props.autoFocus}
+            multiline={this.props.multiline}
+            textAlignVertical={'top'}
+            onChangeText={this.props.onChangeText}
+          />
+        </View>
+
+      )
+    }
     if (!this.props.source) {
       return (
         <View style={styles.inputWrapper}>
@@ -18,6 +40,9 @@ export default class UserInput extends Component {
             placeholderTextColor="#C7C7A2"
             underlineColorAndroid="transparent"
             autoFocus={this.props.autoFocus}
+            multiline={this.props.multiline}
+            onChangeText={this.props.onChangeText}
+         
           />
         </View>
 
@@ -37,6 +62,7 @@ export default class UserInput extends Component {
           placeholderTextColor="black"
           underlineColorAndroid="transparent"
           onChangeText={this.props.onChangeText}
+          multiline={this.props.multiline}
 
         />
       </View>
@@ -64,7 +90,17 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     paddingLeft: 15,
     borderRadius: 20,
-    color: '#ffffff',
+    color: 'black',
+  },
+
+  input3: {
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    width: DEVICE_WIDTH - 40,
+    height: 150,
+    marginHorizontal: 20,
+    paddingLeft: 15,
+    borderRadius: 20,
+    color: 'black',
   },
   inputshort: {
     backgroundColor: 'rgba(255, 255, 255, 0.4)',

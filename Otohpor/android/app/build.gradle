@@ -137,6 +137,12 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-send-intent')
+    compile project(':react-native-intent-launcher')
+    compile project(':react-native-android-installed-apps')
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-image-picker')
+    compile project(':react-native-camera')
     implementation project(':react-native-image-picker')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-camera')

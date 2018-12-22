@@ -10,6 +10,8 @@ import Task from './source/component/Task'
 import Money from './source/component/Money'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CreatePicture from './source/component/CreatePicture'
+import SendEmail from './source/component/SendEMail'
+import ExternalApp from './source/component/ExternalApp';
 class TabIcon extends Component {
   constructor(props) {
     super(props)
@@ -27,9 +29,11 @@ export default class App extends React.Component {
     return (
       <Router>
         <Scene key='root' navigationBarStyle={{ backgroundColor: '#104964' }} titleStyle={{ color: "white" }} headerTintColor="white" showLabel={false}>
-          <Scene key='login' component={LoginPage} hideNavBar={true} animation='fade' initial/>
+          <Scene key='login' component={LoginPage} hideNavBar={true} animation='fade' />
+          <Scene key='send_email' component={SendEmail} hideNavBar={true} animation='fade' />
+          <Scene key= 'open_app' component={ExternalApp} hideNavBar animation='fade' initial/>
           <Scene key='confirmation_code' component={Confirmation} hideNavBar={true} />
-          <Scene key='create_account' component={CreateAccount} hideNavBar={trueinitial} />
+          <Scene key='create_account' component={CreateAccount} hideNavBar={true} />
           <Scene key='home' component={HomeScreen} hideNavBar={true} />
           <Scene key='profile_picture' component={CreatePicture} title='Set a profile picture' />
 

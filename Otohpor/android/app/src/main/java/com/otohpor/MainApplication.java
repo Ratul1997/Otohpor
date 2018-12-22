@@ -3,6 +3,12 @@ package com.otohpor;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.burnweb.rnsendintent.RNSendIntentPackage;
+import com.poberwong.launcher.IntentLauncherPackage;
+import com.androidinstalledapps.RNAndroidInstalledAppsPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.imagepicker.ImagePickerPackage;
+import org.reactnative.camera.RNCameraPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.imagepicker.ImagePickerPackage;
 import org.reactnative.camera.RNCameraPackage;
@@ -26,6 +32,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSendIntentPackage(),
+            new IntentLauncherPackage(),
+            new RNAndroidInstalledAppsPackage(),
             new VectorIconsPackage(),
             new ImagePickerPackage(),
             new RNCameraPackage()
