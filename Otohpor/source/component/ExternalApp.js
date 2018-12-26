@@ -33,6 +33,7 @@ export default class ExternalApp extends React.Component {
             }
         });
     }
+    
     handleOnpress = () => {
         SendIntentAndroid.openApp('com.pathao.user').then((wasOpened) => {
             if(!wasOpened){

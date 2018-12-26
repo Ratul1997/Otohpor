@@ -12,6 +12,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import CreatePicture from './source/component/CreatePicture'
 import SendEmail from './source/component/SendEMail'
 import ExternalApp from './source/component/ExternalApp';
+import InstalledAppPicker from './source/component/InstalledAppPicker';
+import FlatList from './source/component/FlatLists'
 class TabIcon extends Component {
   constructor(props) {
     super(props)
@@ -31,7 +33,10 @@ export default class App extends React.Component {
         <Scene key='root' navigationBarStyle={{ backgroundColor: '#104964' }} titleStyle={{ color: "white" }} headerTintColor="white" showLabel={false}>
           <Scene key='login' component={LoginPage} hideNavBar={true} animation='fade' />
           <Scene key='send_email' component={SendEmail} hideNavBar={true} animation='fade' />
-          <Scene key= 'open_app' component={ExternalApp} hideNavBar animation='fade' initial/>
+          <Scene key='app_picker' component={InstalledAppPicker} hideNavBar animation='fade' initial/>
+          <Scene key='lists' component={FlatList} hideNavBar />
+          <Scene key= 'open_app' component={ExternalApp} hideNavBar animation='fade'/>
+
           <Scene key='confirmation_code' component={Confirmation} hideNavBar={true} />
           <Scene key='create_account' component={CreateAccount} hideNavBar={true} />
           <Scene key='home' component={HomeScreen} hideNavBar={true} />
